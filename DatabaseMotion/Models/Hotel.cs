@@ -3,10 +3,10 @@
     public class Hotel
     {
         public int HotelNo { get; set; }
-        public string HotelName { get; set; } = null!; // must have a name
+        public string Name { get; set; } = null!; 
 
-        public List<Room> Rooms { get; set; } = new();// 1:M relation
-            
+        public List<Room> Rooms { get; set; } = new();// 1:M relation, initialiseret for at undgå null reference
+
 
     }
 }

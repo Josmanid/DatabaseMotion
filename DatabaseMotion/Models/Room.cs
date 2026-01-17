@@ -3,10 +3,10 @@
     public class Room
     {
         public int RoomNo { get; set; }
-        public int HotelNo { get; set; }
-        public string RoomType { get; set; } = null!; // must have a room type and better name
-        public decimal RoomPrice { get; set; } // and better name
+        public int HotelNo { get; set; } // Fremmednøgle
+        public string Type { get; set; } = null!;
+        public decimal Price { get; set; }
 
-        public Hotel? Hotel { get; set; } // navigation prop
+        public Hotel? Hotel { get; set; } // navigation property to Hotel
     }
 }
