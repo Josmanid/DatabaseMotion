@@ -1,4 +1,39 @@
 ﻿@page
 @model DatabaseMotion.Pages.Hotels.GetHotelsModel
 @{
+    ViewData["Title"] = "GetHotels";
 }
+<h1>Rooms site</h1>
+
+<form method="get">
+    <a asp-asp-page="/Hotels/GetHotels">Back to full list</a>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Hotel Id  </th>
+            <th> Name </th>
+            <th> Address  </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+        @foreach (var item in Model.Hotels)
+        {
+            <tr>
+                <td>@item.HotelNo  </td>
+                <td>  @item.Name </td>
+                <td>
+                    <p>
+                        <a asp-page="/Rooms/GetRooms" asp-page-handler="HotelRooms" asp-route-id="@item.HotelNo"> Rooms</a>
+                    </p>
+                </td>
+
+            </tr>
+        }
+
+</table>
