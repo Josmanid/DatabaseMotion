@@ -1,7 +1,10 @@
-﻿namespace DatabaseMotion.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DatabaseMotion.Models
 {
     public class Hotel
     {
+        
         public int HotelNo { get; set; }
         public string Name { get; set; } = null!; 
 
