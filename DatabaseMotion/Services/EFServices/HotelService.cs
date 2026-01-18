@@ -1,6 +1,7 @@
 ﻿using DatabaseMotion.DBContext;
 using DatabaseMotion.Models;
 using DatabaseMotion.Services.IServices;
+using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMotion.Services.EFServices
 {
@@ -13,7 +14,7 @@ namespace DatabaseMotion.Services.EFServices
         }
 
         public IEnumerable<Hotel> GetHotels() {
-            return _context.Hotels;
+            return _context.Hotels.AsNoTracking().ToList();
         }
     }
 }
