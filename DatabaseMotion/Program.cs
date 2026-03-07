@@ -1,4 +1,5 @@
 using DatabaseMotion.DBContext;
+using DatabaseMotion.DBContext.Repository;
 using DatabaseMotion.Services.EFServices;
 using DatabaseMotion.Services.IServices;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ builder.Services.AddRazorPages();
 //Her hentes connection string fra config, ikke direkte fra kode.
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<IHotelService, HotelService>();
 var app = builder.Build();
 

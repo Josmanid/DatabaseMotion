@@ -10,13 +10,12 @@ namespace DatabaseMotion.Pages.Hotels
 
         public IEnumerable<Hotel> Hotels { get; set; }
 
-        IHotelService _hotelService;
+        private IHotelService _hotelService;
 
         public GetHotelsModel(IHotelService service) {
             _hotelService = service;
             
         }
-
 
 
         public void OnGet()

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseMotion", "DatabaseMotion\DatabaseMotion.csproj", "{2D790B6F-76A0-4CED-A760-2BDAF205BEB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsLeg", "TestsLeg\TestsLeg.csproj", "{011544F9-3C6A-41E0-ACF0-BF1B4B160957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2D790B6F-76A0-4CED-A760-2BDAF205BEB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D790B6F-76A0-4CED-A760-2BDAF205BEB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D790B6F-76A0-4CED-A760-2BDAF205BEB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011544F9-3C6A-41E0-ACF0-BF1B4B160957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011544F9-3C6A-41E0-ACF0-BF1B4B160957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011544F9-3C6A-41E0-ACF0-BF1B4B160957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011544F9-3C6A-41E0-ACF0-BF1B4B160957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
