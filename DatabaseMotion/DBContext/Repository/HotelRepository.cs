@@ -15,5 +15,11 @@ namespace DatabaseMotion.DBContext.Repository
             List<Hotel> hotelsList = _context.Hotels.AsNoTracking().ToList();
             return hotelsList;
         }
+
+        public Hotel NewHotel(Hotel newHotel) {
+            _context.Hotels.Add(newHotel);
+            _context.SaveChanges();
+            return newHotel;
+        }
     }
 }

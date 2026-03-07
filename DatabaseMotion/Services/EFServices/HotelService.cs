@@ -22,5 +22,7 @@ namespace DatabaseMotion.Services.EFServices
             return Enumerable.Empty<Hotel>();
             
         }
+
+     
     }
 }

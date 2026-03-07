@@ -1,0 +1,16 @@
+﻿@page
+@model DatabaseMotion.Pages.Hotels.InsertHotelModel
+@{
+    ViewData["Title"] = "Insert Hotel";
+}
+<h1>Insert Hotel</h1>
+<form method="post">
+    <div>
+        <label asp-for="Hotel.Name"> Hotel Name</label>
+        <input asp-for="Hotel.Name" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Insert Hotel</button>
+</form>
+
+<a asp-page"="/Hotels/GetHotels">Back to Hotels</a>

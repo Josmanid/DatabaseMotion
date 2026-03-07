@@ -13,6 +13,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<AppDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
+builder.Services.AddScoped<IInsertHotelService, InsertHotelService>();
 builder.Services.AddScoped<IHotelService, HotelService>();
 var app = builder.Build();
 

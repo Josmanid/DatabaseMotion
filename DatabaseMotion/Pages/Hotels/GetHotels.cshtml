@@ -19,9 +19,6 @@
         </tr>
     </thead>
     <tbody>
-
-
-
         @foreach (var item in Model.Hotels)
         {
             <tr>
@@ -32,8 +29,9 @@
                         <a asp-page="/Rooms/GetRooms" asp-page-handler="HotelRooms" asp-route-id="@item.HotelNo"> Rooms</a>
                     </p>
                 </td>
-
             </tr>
         }
-
+        
+        
 </table>
+<a asp-page="/Hotels/InsertHotel" class="btn btn-primary mb-3">Tilføj Hotel</a>

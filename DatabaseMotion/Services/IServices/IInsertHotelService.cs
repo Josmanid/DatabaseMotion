@@ -2,11 +2,8 @@
 
 namespace DatabaseMotion.Services.IServices
 {
-    public interface IHotelService
+    public interface IInsertHotelService
     {
-        public IEnumerable<Hotel> GetHotels();
-
-       
-
+        public Hotel NewHotel(Hotel hotel);
     }
 }
