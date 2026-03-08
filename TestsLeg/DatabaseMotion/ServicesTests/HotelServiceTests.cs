@@ -8,11 +8,17 @@ using Moq;
 using DatabaseMotion.DBContext.Repository;
 using DatabaseMotion.Models;
 using DatabaseMotion.Services.EFServices;
+using DatabaseMotion.Services.IServices;
+using FluentAssertions;
 
 namespace TestsLeg.DatabaseMotion.Services
 {
     public class HotelServiceTests
     {
+        //TODO: test fixture 
+
+
+
         [Fact]
         //naming is like this CLassName_MethodName_WhatWeWantToHappen
         public void HotelService_GetHotels_ReturnListofHotels() {
@@ -48,6 +54,36 @@ namespace TestsLeg.DatabaseMotion.Services
             Assert.NotNull(result);
             Assert.Equal(2,result.Count());
 
+
+        }
+
+        [Fact]
+        public void HotelService_InsertHotel_ReturnHotel() {
+            //Arrange
+            // make a new fake class that implements the same interface. husk at tænk over hvad skal vi bruge for at lave vores test?
+            Mock<IHotelRepository> moqRepository = new Mock<IHotelRepository>();
+
+            // lav et nyt hotel
+            Hotel newHotel = new Hotel() { Name = "Fake Hostel" };
+
+            // den er dum og skal fortælle hvad den skal retunerer når den bliver kaldt
+            moqRepository.Setup(repo => repo.NewHotel(newHotel)).Returns(newHotel);
+
+            // nu skal vi opretholde instantiere en rigtig InsertHotelService klasse men den skal pege på vores fake moq object
+
+            InsertHotelService insertHotelService = new InsertHotelService(moqRepository.Object);
+            //Act
+            Hotel result = insertHotelService.NewHotel(newHotel);
+
+            //Assert
+            
+            //xUnit
+            Assert.NotNull(result);
+            Assert.Equal("Fake Hostel", result.Name);
+
+            //FluentAssertions
+            result.Should().NotBeNull();
+            result.Name.Should().Be(newHotel.Name);
 
         }
     }
