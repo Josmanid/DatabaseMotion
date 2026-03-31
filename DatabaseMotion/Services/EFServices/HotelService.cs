@@ -6,6 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMotion.Services.EFServices
 {
+    /// <summary>
+    /// Provides hotel-related operations using a hotel repository.
+    /// </summary>
     public class HotelService : IHotelService
     {
         private readonly IHotelRepository _repository;
