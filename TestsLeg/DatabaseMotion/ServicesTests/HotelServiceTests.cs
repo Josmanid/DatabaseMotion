@@ -46,15 +46,15 @@ namespace TestsLeg.DatabaseMotion.Services
             IEnumerable<Hotel> result = _hotelService.GetHotels();
             //Assert
             result.Should().NotBeNull(); // altid null exceptions først fordi empty skal ikke kalde null exceptions
-            result.Should().BeEmpty(); 
-       
+            result.Should().BeEmpty();
+
         }
 
         [Fact]
         //naming is like this CLassName_MethodName_WhatWeWantToHappen
         public void HotelService_GetHotels_ReturnListofHotels() {
             //Arrange
-        
+
             List<Hotel> forventetListe = new List<Hotel>
             {
                 new Hotel {Name = "Grand Hotel"},
@@ -70,7 +70,7 @@ namespace TestsLeg.DatabaseMotion.Services
             IEnumerable<Hotel> result = _hotelService.GetHotels();
             //Assert
             Assert.NotNull(result);
-            Assert.Equal(2,result.Count());
+            Assert.Equal(2, result.Count());
         }
 
         [Fact]
@@ -86,7 +86,7 @@ namespace TestsLeg.DatabaseMotion.Services
             Hotel result = _insertHotelService.NewHotel(newHotel);
 
             //Assert
-            
+
             //xUnit
             Assert.NotNull(result);
             Assert.Equal("Fake Hostel", result.Name);
