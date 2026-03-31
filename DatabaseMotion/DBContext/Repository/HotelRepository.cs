@@ -3,6 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DatabaseMotion.DBContext.Repository
 {
+    /// <summary>
+    /// Concrete implementation of IHotelRepository.
+    /// Handles direct database communication via Entity Framework.
+    /// The interface abstraction allows the service layer to be tested with Moq.
+    /// </summary>
     public class HotelRepository : IHotelRepository
     {
         private readonly AppDBContext _context;
