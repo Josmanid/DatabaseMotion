@@ -6,7 +6,10 @@ namespace DatabaseMotion.DBContext.Repository
     {
         IEnumerable<Hotel> GetAll();
 
+        Hotel? GetHotelById(int id);
+
         Hotel NewHotel(Hotel newHotel);
 
+        
     }
 }

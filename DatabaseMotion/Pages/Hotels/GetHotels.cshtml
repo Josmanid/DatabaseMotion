@@ -4,6 +4,29 @@
     ViewData["Title"] = "GetHotels";
 }
 <h1>Rooms site</h1>
+<form method="get">
+    <input type="number" name="InputId" placeholder="Indtast hotel Id" />
+    <button type="submit" class="btn btn-primary">Find Hotel</button>
+</form>
+@if (Model.InputId.HasValue)
+{
+    @if (Model.FoundHotel != null)
+    {
+        <div class="alert alert-success">
+            <p>Hotel fundet!</p>
+            <p>Id: @Model.FoundHotel.HotelNo</p>
+            <p>Navn: @Model.FoundHotel.Name
+            </p>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger">
+            Intet Hotel med Id: @Model.InputId Findes
+        </div>
+    }
+}
+
 
 <form method="get">
     <a asp-asp-page="/Hotels/GetHotels">Back to full list</a>

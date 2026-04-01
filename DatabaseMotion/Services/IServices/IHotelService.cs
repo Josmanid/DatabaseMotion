@@ -4,9 +4,10 @@ namespace DatabaseMotion.Services.IServices
 {
     public interface IHotelService
     {
-        public IEnumerable<Hotel> GetHotels();
+        IEnumerable<Hotel> GetHotels();
 
-       
+        Hotel? GetHotelById(int id);
+
 
     }
 }
