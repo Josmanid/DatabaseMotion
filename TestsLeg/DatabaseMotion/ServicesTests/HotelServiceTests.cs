@@ -74,6 +74,37 @@ namespace TestsLeg.DatabaseMotion.Services
         }
 
         [Fact]
+        public void HotelService_GetHotelById_ThrowsKeyNotFoundException_WhenHotelNotFound() {
+            //Arrange
+            Hotel nullHotel = null;
+
+            _mockRepository.Setup(repo => repo.GetHotelById(99)).Returns(nullHotel);
+            //Act + Assert
+
+            Assert.Throws<KeyNotFoundException>(() => _hotelService.GetHotelById(99) );
+        }
+
+        [Fact]
+        //naming is like this CLassName_MethodName_WhatWeWantToHappen
+        public void HotelService_GetHotelById_ReturnHotel() {
+            //Arrange
+
+            //Lav en liste af hoteller så vi kan finde et hotel derfra
+            Hotel forventetHotel = new Hotel { HotelNo = 1, Name = "Grand Hotel" };
+            // den er dum og skal fortælle hvad den skal retunerer når den bliver kaldt
+            _mockRepository.Setup(repo => repo.GetHotelById(1)).Returns(forventetHotel);
+
+            //Act
+            Hotel? result = _hotelService.GetHotelById(1);
+
+            //Assert
+            result.Should().NotBeNull();
+            result.HotelNo.Should().Be(1);
+            result.Name.Should().Be("Grand Hotel");
+        }
+
+
+        [Fact]
         public void HotelService_InsertHotel_ReturnHotel() {
             //Arrange
 

@@ -13,12 +13,19 @@ namespace DatabaseMotion.DBContext.Repository
         private readonly AppDBContext _context;
 
         public HotelRepository(AppDBContext service) {
-            _context = service; 
+            _context = service;
         }
 
         public IEnumerable<Hotel> GetAll() {
             List<Hotel> hotelsList = _context.Hotels.AsNoTracking().ToList();
             return hotelsList;
+        }
+
+        public Hotel? GetHotelById(int id) {
+            Hotel? hotelById = _context.Hotels.
+                AsNoTracking().
+                FirstOrDefault(h => h.HotelNo == id);
+            return hotelById;
         }
 
         public Hotel NewHotel(Hotel newHotel) {
