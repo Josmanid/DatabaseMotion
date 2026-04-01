@@ -17,15 +17,26 @@ namespace DatabaseMotion.Services.EFServices
             _repository = repository;
         }
 
+
         public IEnumerable<Hotel> GetHotels() {
             if (_repository != null)
             {
                 return _repository.GetAll();
             }
             return Enumerable.Empty<Hotel>();
-            
+
+        }
+        public Hotel? GetHotelById(int id) {
+            Hotel? hotel = _repository.GetHotelById(id);
+
+            if (hotel == null)
+            {
+                throw new KeyNotFoundException($"Hotel with the {id} dosen't exist");
+            }
+            return hotel;
         }
 
-     
+
+
     }
 }
